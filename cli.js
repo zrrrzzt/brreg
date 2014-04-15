@@ -28,9 +28,8 @@ if (process.argv.indexOf('-v') !== -1 || process.argv.indexOf('--version') !== -
   return;
 }
 
-if (process.argv.indexOf('-f') !== -1 || process.argv.indexOf('--format') !== -1) {
+if (process.argv[3] && (process.argv[3].indexOf('-f') !== -1 || process.argv[3].indexOf('--format') !== -1)) {
   format = process.argv[3].split('=')[1];
-  return;
 }
 
 brreg({query:query, format:format}, function(err, data){

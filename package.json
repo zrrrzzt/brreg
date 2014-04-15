@@ -1,0 +1,35 @@
+{
+  "name": "brreg",
+  "description": "Look up data from the Norwegian Entity Registry",
+  "version": "0.0.1",
+  "author": {
+    "name": "Geir Gåsodden",
+    "email": "geir.gasodden@pythonia.no"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/zrrrzzt/brreg.git"
+  },
+  "bugs": {
+    "url": "http://github.com/zrrrzzt/brreg/issues"
+  },
+  "bin": {
+    "brreg": "cli.js"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "mocha --reporter spec test/*.js"
+  },
+  "files": [
+    "index.js",
+    "cli.js"
+  ],
+  "dependencies": {
+    "difi": "0.0.3"
+  },
+  "devDependencies": {
+    "mocha": "^1.18.2"
+  }
+}

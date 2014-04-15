@@ -37,10 +37,9 @@ Optional you can specify format for the data returned.
 ```javascript
 var brreg = require('brreg')
   , opts = {
-      query: {
-        query:'Pythonia'
-      }
-    };
+      query:'Pythonia'
+    }
+  ;
 
 brreg(opts, function(err, data){
   if(err)throw err;

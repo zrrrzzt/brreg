@@ -30,6 +30,6 @@
     "difi": "0.0.3"
   },
   "devDependencies": {
-    "mocha": "^1.18.2"
+    "mocha": "^1.20.0"
   }
 }

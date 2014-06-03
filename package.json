@@ -27,7 +27,7 @@
     "cli.js"
   ],
   "dependencies": {
-    "difi": "0.0.3"
+    "difi": "0.0.4"
   },
   "devDependencies": {
     "mocha": "^1.20.0"

@@ -24,7 +24,7 @@ Make sure you have installed [Mocha](http://visionmedia.github.io/mocha/) global
 $ npm test
 ```
 
-##Usage##
+##Usage module
 
 Pass an object with the required property and receive the result.
 
@@ -47,16 +47,9 @@ brreg(opts, function(err, data){
 });
 ```
 
-##CLI##
+##Usage - CLI
 
 To use it as a CLI app install it globally.
-
-To display help
-
-```
-$ brreg --help
-```
-Usage
 
 ```
 $ brreg <query>
@@ -68,4 +61,16 @@ Valid options: csv, json, jsonp, xml and yaml (default)
 
 ```
 $ brreg <query> --format=csv
+```
+
+To display help
+
+```
+$ brreg --help
+```
+
+To display version
+
+```
+$ brreg --version
 ```

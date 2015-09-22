@@ -1,30 +1,21 @@
-#brreg [![Build Status](https://travis-ci.org/zrrrzzt/brreg.svg?branch=master)](https://travis-ci.org/zrrrzzt/brreg)
+[![Build Status](https://travis-ci.org/zrrrzzt/brreg.svg?branch=master)](https://travis-ci.org/zrrrzzt/brreg)
+[![Coverage Status](https://coveralls.io/repos/zrrrzzt/brreg/badge.svg?branch=master&service=github)](https://coveralls.io/github/zrrrzzt/brreg?branch=master)
+[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](https://github.com/feross/standard)
+# brreg
 
-Node.js module/CLI for looking up data from the Norwegian Entity Registry.
+Node.js module for looking up data from the Norwegian Entity Registry.
 
 It makes use of the 'brreg/enhetsregisteret' dataset from [hotell.difi.no API](http://hotell.difi.no/api).
 
-##Installation##
+## Installation
+
+From npm
 
 ```
-$ npm install brreg
+$ npm install brreg --save
 ```
 
-You can also install it globally to use the CLI version.
-
-```
-$ npm install brreg -g
-```
-
-##Test##
-
-Make sure you have installed [Mocha](http://visionmedia.github.io/mocha/) globally or go to the brreg folder and do an nmp install.
-
-```
-$ npm test
-```
-
-##Usage module
+## Usage
 
 Pass an object with the required property and receive the result.
 
@@ -35,42 +26,22 @@ Optional you can specify format for the data returned.
 **format** Format for the result. Can be csv, json, jsonp, xml or yaml. json is default.
 
 ```javascript
+'use strict'
+
 var brreg = require('brreg')
-  , opts = {
-      query:'Pythonia'
-    }
-  ;
+var opts = {
+  query:'Pythonia'
+}
 
-brreg(opts, function(err, data){
-  if(err)throw err;
-  console.log(data);
-});
+brreg(opts, function (error, data) {
+  if (error) {
+    throw error
+  } else {
+    console.log(JSON.stringify(data))
+  }
+})
 ```
 
-##Usage - CLI
+## Related
 
-To use it as a CLI app install it globally.
-
-```
-$ brreg <query>
-```
-
-Optional you can specify format.
-
-Valid options: csv, json, jsonp, xml and yaml (default)
-
-```
-$ brreg <query> --format=csv
-```
-
-To display help
-
-```
-$ brreg --help
-```
-
-To display version
-
-```
-$ brreg --version
-```
+- [brreg-cli](https://github.com/zrrrzzt/brreg-cli) The CLI for this module

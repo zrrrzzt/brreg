@@ -1,11 +1,19 @@
 {
   "name": "brreg",
   "description": "Look up data from the Norwegian Entity Registry",
-  "version": "0.0.4",
+  "version": "1.0.0",
   "author": {
     "name": "Geir Gåsodden",
     "email": "geir.gasodden@pythonia.no"
   },
+  "license": "MIT",
+  "keywords": [
+    "brreg",
+    "difi",
+    "enhetsregisteret",
+    "norwegian entity registry",
+    "Brønnøysundregistrene"
+  ],
   "repository": {
     "type": "git",
     "url": "http://github.com/zrrrzzt/brreg.git"
@@ -13,23 +21,22 @@
   "bugs": {
     "url": "http://github.com/zrrrzzt/brreg/issues"
   },
-  "bin": {
-    "brreg": "cli.js"
-  },
+  "main": "index.js",
   "engines": {
-    "node": ">=0.10.0"
+    "node": ">=0.12.0"
   },
   "scripts": {
-    "test": "mocha --reporter spec test/*.js"
-  },
-  "files": [
-    "index.js",
-    "cli.js"
-  ],
-  "dependencies": {
-    "difi": "0.0.4"
+    "setup": "npm install && node setup.js",
+    "test": "standard && tap --reporter=spec test/*.js",
+    "coverage": "tap test/*.js --coverage",
+    "coveralls": "tap --cov --coverage-report=lcov test/*.js && cat coverage/lcov.info | coveralls"
   },
   "devDependencies": {
-    "mocha": "^1.20.0"
+    "coveralls": "^2.11.4",
+    "standard": "^5.3.0",
+    "tap": "^1.4.1"
+  },
+  "dependencies": {
+    "difi": "^3.0.0"
   }
 }

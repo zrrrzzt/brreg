@@ -1,27 +1,26 @@
 'use strict'
 
-var difi = require('difi')
+const difi = require('difi')
 
-module.exports = function lookupBRREG (options, callback) {
+module.exports = (options, callback) => {
   if (!options) {
     return callback(new Error('Missing required input: options'), null)
   }
   if (!options.query) {
     return callback(new Error('Missing required input: options.query'), null)
   }
-  var q = options.query
-  var format = options.format || 'json'
-  var difiOpts = {
+
+  const difiOptions = {
     dataset: 'brreg/enhetsregisteret',
-    format: format,
+    format: options.format || 'json',
     query: {
-      query: q
+      query: options.query
     }
   }
 
-  difi(difiOpts, function (err, data) {
-    if (err) {
-      return callback(err, null)
+  difi(difiOptions, (error, data) => {
+    if (error) {
+      return callback(error, null)
     } else {
       return callback(null, data)
     }

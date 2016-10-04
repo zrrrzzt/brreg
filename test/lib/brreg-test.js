@@ -1,6 +1,6 @@
 'use strict'
 
-var brreg = require('../index')
+var brreg = require('../../index')
 var tap = require('tap')
 
 tap.test('Requires an options object', function (test) {

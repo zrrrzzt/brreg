@@ -23,7 +23,7 @@
   },
   "main": "index.js",
   "engines": {
-    "node": ">=4.6.0"
+    "node": ">=4.6.1"
   },
   "scripts": {
     "setup": "npm install && node setup.js",

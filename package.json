@@ -1,7 +1,7 @@
 {
   "name": "brreg",
   "description": "Look up data from the Norwegian Entity Registry",
-  "version": "2.0.3",
+  "version": "2.0.4",
   "author": {
     "name": "Geir Gåsodden",
     "email": "geir.gasodden@pythonia.no"
@@ -23,7 +23,7 @@
   },
   "main": "index.js",
   "engines": {
-    "node": ">=4.6.1"
+    "node": ">=4.6.2"
   },
   "scripts": {
     "setup": "npm install && node setup.js",

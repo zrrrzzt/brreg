@@ -25,21 +25,42 @@ Optional you can specify format for the data returned.
 
 **format** Format for the result. Can be csv, json, jsonp, xml or yaml. json is default.
 
+### Callback example
+
 ```javascript
 'use strict'
 
-var brreg = require('brreg')
-var opts = {
+const brreg = require('brreg')
+const options = {
   query:'Pythonia'
 }
 
-brreg(opts, function (error, data) {
+brreg(options, (error, data) => {
   if (error) {
     throw error
   } else {
     console.log(JSON.stringify(data))
   }
 })
+```
+
+### Promises example
+
+```javascript
+'use strict'
+
+const brreg = require('brreg')
+const options = {
+  query:'Pythonia'
+}
+
+brreg(options)
+  .then(data => {
+    console.log(data)
+  })
+  .catch(error => {
+    console.error(error)
+  })
 ```
 
 ## Related

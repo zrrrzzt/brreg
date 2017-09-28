@@ -32,7 +32,7 @@
     "coveralls": "tap --cov --coverage-report=lcov test/**/*.js && cat coverage/lcov.info | coveralls"
   },
   "devDependencies": {
-    "coveralls": "2.13.1",
+    "coveralls": "2.13.2",
     "nsp": "2.8.0",
     "standard": "10.0.3",
     "tap": "10.7.2"

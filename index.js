@@ -1,44 +1,35 @@
 'use strict'
 
-const difi = require('difi')
+const getData = require('./lib/get-data')
 
-module.exports = (options, callback) => {
-  return new Promise((resolve, reject) => {
-    if (!options) {
-      let error = new Error('Missing required input: options')
-      if (callback) {
-        return callback(error, null)
-      }
-      reject(error)
-    }
-    if (!options.query) {
-      let error = new Error('Missing required input: options.query')
-      if (callback) {
-        return callback(error, null)
-      }
-      reject(error)
-    }
+module.exports = async options => {
+  if (!options) {
+    throw new Error('Missing required input: options')
+  }
+  if (!options.query) {
+    throw new Error('Missing required input: options.query')
+  }
 
-    const difiOptions = {
-      dataset: 'brreg/enhetsregisteret',
-      format: options.format || 'json',
-      query: {
-        query: options.query
-      }
+  const difiEnehetsOptions = {
+    dataset: 'brreg/enhetsregisteret',
+    format: options.format || 'json',
+    query: {
+      query: options.query
     }
+  }
 
-    difi(difiOptions, (error, data) => {
-      if (error) {
-        if (callback) {
-          return callback(error, null)
-        }
-        reject(error)
-      } else {
-        if (callback) {
-          return callback(null, data)
-        }
-        resolve(data)
-      }
-    })
-  })
+  const difiUnderenhetsOptions = {
+    dataset: 'brreg/underenheter',
+    format: options.format || 'json',
+    query: {
+      query: options.query
+    }
+  }
+
+  try {
+    const [enhet, underenhet] = await Promise.all([getData(difiEnehetsOptions), getData(difiUnderenhetsOptions)])
+    return {enhetsregisteret: enhet, underenheter: underenhet}
+  } catch (error) {
+    throw error
+  }
 }

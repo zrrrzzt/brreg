@@ -1,11 +1,15 @@
 [![Build Status](https://travis-ci.org/zrrrzzt/brreg.svg?branch=master)](https://travis-ci.org/zrrrzzt/brreg)
 [![Coverage Status](https://coveralls.io/repos/zrrrzzt/brreg/badge.svg?branch=master&service=github)](https://coveralls.io/github/zrrrzzt/brreg?branch=master)
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](https://github.com/feross/standard)
+[![Greenkeeper badge](https://badges.greenkeeper.io/zrrrzzt/brreg.svg)](https://greenkeeper.io/)
+
 # brreg
 
 Node.js module for looking up data from the Norwegian Entity Registry.
 
-It makes use of the 'brreg/enhetsregisteret' dataset from [hotell.difi.no API](http://hotell.difi.no/api).
+It makes use of the 'brreg/enhetsregisteret' and 'brreg/underenheter' datasets from [hotell.difi.no API](http://hotell.difi.no/api).
+
+Requires Node >= 8
 
 ## Installation
 
@@ -25,44 +29,87 @@ Optional you can specify format for the data returned.
 
 **format** Format for the result. Can be csv, json, jsonp, xml or yaml. json is default.
 
-### Callback example
+### Example
 
-```javascript
+```JavaScript
 'use strict'
 
 const brreg = require('brreg')
 const options = {
-  query:'Pythonia'
-}
-
-brreg(options, (error, data) => {
-  if (error) {
-    throw error
-  } else {
-    console.log(JSON.stringify(data))
-  }
-})
-```
-
-### Promises example
-
-```javascript
-'use strict'
-
-const brreg = require('brreg')
-const options = {
-  query:'Pythonia'
+  query:'Registerenheten i Brønnøysund'
 }
 
 brreg(options)
-  .then(data => {
-    console.log(data)
-  })
-  .catch(error => {
-    console.error(error)
-  })
+  .then(console.log)
+  .catch(console.error)
+```
+
+Returns
+
+```JavaScript
+{'enhetsregisteret': {
+    'data': {
+      'entries': [
+        {
+          'tvangsavvikling': 'N',
+          'regnskap': '',
+          'forradrpostnr': '8900',
+          'ansatte_antall': '566',
+          'postadresse': 'Postboks 900',
+          'nkode3': '',
+          'ppoststed': 'BRØNNØYSUND',
+          'konkurs': 'N',
+          'stiftelsesdato': '',
+          'sektorkode': '6100',
+          'ansatte_dato': '12.10.2017',
+          'organisasjonsform': 'ORGL',
+          'navn': 'REGISTERENHETEN I BRØNNØYSUND',
+          'regifriv': 'N',
+          'forradrkommnr': '1813',
+          'regimva': 'N',
+          'tlf_mobil': '',
+          'forradrland': 'Norge',
+          'ppostland': 'Norge',
+          'avvikling': 'N',
+          'regifr': 'N',
+          'hovedenhet': '912660680',
+          'forretningsadr': 'Havnegata 48',
+          'url': 'www.brreg.no',
+          'forradrpoststed': 'BRØNNØYSUND',
+          'tlf': '75 00 75 09',
+          'nkode1': '84.110',
+          'nkode2': '',
+          'forradrkommnavn': 'BRØNNØY',
+          'regdato': '09.08.1995',
+          'orgnr': '974760673',
+          'regiaa': 'J',
+          'ppostnr': '8910'
+        }
+      ],
+      'page': 1,
+      'pages': 1,
+      'posts': 1
+    },
+    'error': false
+  },
+  'underenhet': {
+    'data': {
+      'entries': [],
+      'page': 1,
+      'pages': 0,
+      'posts': 0
+    },
+    'error': false
+  }
+}
 ```
 
 ## Related
 
 - [brreg-cli](https://github.com/zrrrzzt/brreg-cli) The CLI for this module
+
+## License
+
+[MIT](LICENSE)
+
+![Robohash image of brreg](https://robots.kebabstudios.party/brreg.png 'Robohash image of brreg')

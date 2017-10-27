@@ -1,7 +1,7 @@
 {
   "name": "brreg",
   "description": "Look up data from the Norwegian Entity Registry",
-  "version": "2.1.0",
+  "version": "3.0.0",
   "author": {
     "name": "Geir Gåsodden",
     "email": "geir.gasodden@pythonia.no"
@@ -16,20 +16,21 @@
   ],
   "repository": {
     "type": "git",
-    "url": "http://github.com/zrrrzzt/brreg.git"
+    "url": "git+https://github.com/zrrrzzt/brreg.git"
   },
   "bugs": {
-    "url": "http://github.com/zrrrzzt/brreg/issues"
+    "url": "https://github.com/zrrrzzt/brreg/issues"
   },
+  "homepage": "https://github.com/zrrrzzt/brreg",
   "main": "index.js",
   "engines": {
-    "node": ">=4.6.2"
+    "node": ">=8.8.1"
   },
   "scripts": {
-    "setup": "npm install && node setup.js",
     "test": "standard && nsp check && tap --reporter=spec test/**/*.js",
     "coverage": "tap test/**/*.js --coverage",
-    "coveralls": "tap --cov --coverage-report=lcov test/**/*.js && cat coverage/lcov.info | coveralls"
+    "coveralls": "tap --cov --coverage-report=lcov test/**/*.js && cat coverage/lcov.info | coveralls",
+    "standard-fix": "standard --fix"
   },
   "devDependencies": {
     "coveralls": "3.0.0",

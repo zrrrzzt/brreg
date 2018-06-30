@@ -1,5 +1,3 @@
-'use strict'
-
 const getData = require('./lib/get-data')
 
 module.exports = async options => {
@@ -28,7 +26,13 @@ module.exports = async options => {
 
   try {
     const [enhet, underenhet] = await Promise.all([getData(difiEnehetsOptions), getData(difiUnderenhetsOptions)])
-    return {enhetsregisteret: enhet, underenheter: underenhet}
+    if (enhet.error !== false) {
+      throw new Error(enhet.error.message)
+    } else if (underenhet.error !== false) {
+      throw new Error(underenhet.error.message)
+    } else {
+      return {enhetsregisteret: enhet, underenheter: underenhet}
+    }
   } catch (error) {
     throw error
   }

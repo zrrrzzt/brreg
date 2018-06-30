@@ -1,7 +1,6 @@
 [![Build Status](https://travis-ci.org/zrrrzzt/brreg.svg?branch=master)](https://travis-ci.org/zrrrzzt/brreg)
 [![Coverage Status](https://coveralls.io/repos/zrrrzzt/brreg/badge.svg?branch=master&service=github)](https://coveralls.io/github/zrrrzzt/brreg?branch=master)
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](https://github.com/feross/standard)
-[![Greenkeeper badge](https://badges.greenkeeper.io/zrrrzzt/brreg.svg)](https://greenkeeper.io/)
 
 # brreg
 
@@ -32,8 +31,6 @@ Optional you can specify format for the data returned.
 ### Example
 
 ```JavaScript
-'use strict'
-
 const brreg = require('brreg')
 const options = {
   query:'Registerenheten i Brønnøysund'
@@ -112,4 +109,4 @@ Returns
 
 [MIT](LICENSE)
 
-![Robohash image of brreg](https://robots.kebabstudios.party/brreg.png 'Robohash image of brreg')
+![Robohash image of brreg](https://robots.kebabstudios.party/brreg.png "Robohash image of brreg")

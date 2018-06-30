@@ -1,5 +1,3 @@
-'use strict'
-
 const brreg = require('../../index')
 const tap = require('tap')
 
@@ -33,12 +31,11 @@ tap.test('Returns error message illegal format requested', test => {
   const expectedErrorMessage = 'Illegal format requested'
   return brreg(options)
     .then(result => {
-      tap.equal(result.enhetsregisteret.error.message, expectedErrorMessage, expectedErrorMessage)
-      tap.equal(result.underenheter.error.message, expectedErrorMessage, expectedErrorMessage)
-      test.done()
+      console.log(result)
     })
     .catch(error => {
-      throw error
+      tap.equal(error.message, expectedErrorMessage, expectedErrorMessage)
+      test.done()
     })
 })
 

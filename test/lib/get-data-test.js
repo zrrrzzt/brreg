@@ -1,5 +1,3 @@
-'use strict'
-
 const tap = require('tap')
 const getData = require('../../lib/get-data')
 

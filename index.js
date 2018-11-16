@@ -31,7 +31,7 @@ module.exports = async options => {
     } else if (underenhet.error !== false) {
       throw new Error(underenhet.error.message)
     } else {
-      return {enhetsregisteret: enhet, underenheter: underenhet}
+      return { enhetsregisteret: enhet, underenheter: underenhet }
     }
   } catch (error) {
     throw error

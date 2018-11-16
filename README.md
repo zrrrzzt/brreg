@@ -6,9 +6,9 @@
 
 Node.js module for looking up data from the Norwegian Entity Registry.
 
-It makes use of the 'brreg/enhetsregisteret' and 'brreg/underenheter' datasets from [hotell.difi.no API](http://hotell.difi.no/api).
+It makes use of the 'brreg/enhetsregisteret' and 'brreg/underenheter' datasets from [hotell.difi.no API](https://hotell.difi.no/api).
 
-Requires Node >= 8
+Requires Node >= 10
 
 ## Installation
 
@@ -108,5 +108,3 @@ Returns
 ## License
 
 [MIT](LICENSE)
-
-![Robohash image of brreg](https://robots.kebabstudios.party/brreg.png "Robohash image of brreg")

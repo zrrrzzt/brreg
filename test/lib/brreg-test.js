@@ -25,8 +25,8 @@ tap.test('Requires query to be specified', test => {
 
 tap.test('Returns error message illegal format requested', test => {
   const options = {
-    'query': 'npmlovesyou-doyoulovenpm',
-    'format': 'cucumber'
+    query: 'npmlovesyou-doyoulovenpm',
+    format: 'cucumber'
   }
   const expectedErrorMessage = 'Illegal format requested'
   return brreg(options)

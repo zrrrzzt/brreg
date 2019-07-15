@@ -24,16 +24,12 @@ module.exports = async options => {
     }
   }
 
-  try {
-    const [enhet, underenhet] = await Promise.all([getData(difiEnehetsOptions), getData(difiUnderenhetsOptions)])
-    if (enhet.error !== false) {
-      throw new Error(enhet.error.message)
-    } else if (underenhet.error !== false) {
-      throw new Error(underenhet.error.message)
-    } else {
-      return { enhetsregisteret: enhet, underenheter: underenhet }
-    }
-  } catch (error) {
-    throw error
+  const [enhet, underenhet] = await Promise.all([getData(difiEnehetsOptions), getData(difiUnderenhetsOptions)])
+  if (enhet.error !== false) {
+    throw new Error(enhet.error.message)
+  } else if (underenhet.error !== false) {
+    throw new Error(underenhet.error.message)
+  } else {
+    return { enhetsregisteret: enhet, underenheter: underenhet }
   }
 }

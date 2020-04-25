@@ -1,18 +1,18 @@
 const tap = require('tap')
 const getData = require('../../lib/get-data')
 
-tap.test('Returns data given right input', test => {
+tap.test('Returns data given right input enhetsregisteret', test => {
   const options = {
     dataset: 'brreg/enhetsregisteret',
     format: 'json',
     query: {
-      query: '974778610'
+      query: '912660680'
     }
   }
   return getData(options)
     .then(result => {
       tap.equal(result.error, false, 'No errors')
-      tap.equal(result.data.entries[0].orgnr, '974778610', 'Expected data returned from input')
+      tap.equal(result.data.entries[0].orgnr, '912660680', 'Expected data returned from input')
       test.done()
     })
     .catch(error => {
@@ -20,7 +20,7 @@ tap.test('Returns data given right input', test => {
     })
 })
 
-tap.test('Returns no data given right input', test => {
+tap.test('Returns no data given right input underenheter', test => {
   const options = {
     dataset: 'brreg/underenheter',
     format: 'json',

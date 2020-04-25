@@ -8,7 +8,7 @@ Node.js module for looking up data from the Norwegian Entity Registry.
 
 It makes use of the 'brreg/enhetsregisteret' and 'brreg/underenheter' datasets from [hotell.difi.no API](https://hotell.difi.no/api).
 
-Requires Node >= 10
+Requires Node >= 14
 
 ## Installation
 
@@ -44,59 +44,60 @@ brreg(options)
 Returns
 
 ```JavaScript
-{'enhetsregisteret': {
-    'data': {
-      'entries': [
+{
+  "enhetsregisteret": {
+    "data": {
+      "entries": [
         {
-          'tvangsavvikling': 'N',
-          'regnskap': '',
-          'forradrpostnr': '8900',
-          'ansatte_antall': '566',
-          'postadresse': 'Postboks 900',
-          'nkode3': '',
-          'ppoststed': 'BRØNNØYSUND',
-          'konkurs': 'N',
-          'stiftelsesdato': '',
-          'sektorkode': '6100',
-          'ansatte_dato': '12.10.2017',
-          'organisasjonsform': 'ORGL',
-          'navn': 'REGISTERENHETEN I BRØNNØYSUND',
-          'regifriv': 'N',
-          'forradrkommnr': '1813',
-          'regimva': 'N',
-          'tlf_mobil': '',
-          'forradrland': 'Norge',
-          'ppostland': 'Norge',
-          'avvikling': 'N',
-          'regifr': 'N',
-          'hovedenhet': '912660680',
-          'forretningsadr': 'Havnegata 48',
-          'url': 'www.brreg.no',
-          'forradrpoststed': 'BRØNNØYSUND',
-          'tlf': '75 00 75 09',
-          'nkode1': '84.110',
-          'nkode2': '',
-          'forradrkommnavn': 'BRØNNØY',
-          'regdato': '09.08.1995',
-          'orgnr': '974760673',
-          'regiaa': 'J',
-          'ppostnr': '8910'
+          "tvangsavvikling": "N",
+          "regnskap": "",
+          "forradrpostnr": "8900",
+          "ansatte_antall": "440",
+          "postadresse": "Postboks 900",
+          "nkode3": "",
+          "ppoststed": "BRØNNØYSUND",
+          "konkurs": "N",
+          "stiftelsesdato": "",
+          "sektorkode": "6100",
+          "ansatte_dato": "15.04.2020",
+          "organisasjonsform": "ORGL",
+          "navn": "REGISTERENHETEN I BRØNNØYSUND",
+          "regifriv": "N",
+          "forradrkommnr": "1813",
+          "regimva": "N",
+          "tlf_mobil": "",
+          "forradrland": "Norge",
+          "ppostland": "Norge",
+          "avvikling": "N",
+          "regifr": "N",
+          "hovedenhet": "912660680",
+          "forretningsadr": "Havnegata 48",
+          "url": "www.brreg.no",
+          "forradrpoststed": "BRØNNØYSUND",
+          "tlf": "75 00 75 09",
+          "nkode1": "84.110",
+          "nkode2": "",
+          "forradrkommnavn": "BRØNNØY",
+          "regdato": "09.08.1995",
+          "orgnr": "974760673",
+          "regiaa": "J",
+          "ppostnr": "8910"
         }
       ],
-      'page': 1,
-      'pages': 1,
-      'posts': 1
+      "page": 1,
+      "pages": 1,
+      "posts": 1
     },
-    'error': false
+    "error": false
   },
-  'underenhet': {
-    'data': {
-      'entries': [],
-      'page': 1,
-      'pages': 0,
-      'posts': 0
+  "underenheter": {
+    "data": {
+      "entries": [],
+      "page": 1,
+      "pages": 0,
+      "posts": 0
     },
-    'error': false
+    "error": false
   }
 }
 ```

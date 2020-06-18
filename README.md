@@ -8,7 +8,7 @@ Node.js module for looking up data from the Norwegian Entity Registry.
 
 It makes use of the 'brreg/enhetsregisteret' and 'brreg/underenheter' datasets from [hotell.difi.no API](https://hotell.difi.no/api).
 
-Requires Node >= 14
+Requires Node >= 12
 
 ## Installation
 

@@ -24,7 +24,7 @@
   "homepage": "https://github.com/zrrrzzt/brreg",
   "main": "index.js",
   "engines": {
-    "node": ">=12.18.1"
+    "node": ">=12.19.1"
   },
   "scripts": {
     "test": "standard && npm audit && tap --reporter=spec test/**/*.js",

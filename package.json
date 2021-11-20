@@ -41,5 +41,8 @@
   },
   "dependencies": {
     "difi": "6.0.3"
+  },
+  "tap": {
+    "check-coverage": false
   }
 }
